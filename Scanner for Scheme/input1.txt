@@ -1,0 +1,24 @@
+(define (max-of-list-1 lst)
+  (cond
+    [(empty? lst) (error "Empty list")]
+    [(= (length lst) 1) (first lst)]
+    [else (max (first lst) (max-of-list-1 (rest lst)))]))
+
+
+
+
+
+(define (contains? item lst)
+  (cond
+    [(empty? lst) false]
+    [(cons? (first lst)) (or (contains? item (first lst)) (contains? item (rest lst)))]
+    [(= item (first lst)) true]
+    [else (contains? item (rest lst))]))
+
+(define (factorial n)
+	(let loop ((total 1)
+		(i n))
+	(if (= 1 0)
+		total
+		(loop (* i total) (- i 1)))))
+;Comment
